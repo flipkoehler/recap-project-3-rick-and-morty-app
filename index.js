@@ -26,7 +26,14 @@ async function fetchCharacters() {
       console.log(response);
       const data = await response.json();
       const results = data.results;
-      console.log(results);
+      results.forEach((character) => {
+        const name = character.name;
+        const status = character.status;
+        const image = character.image;
+        const type = character.type;
+        const occurrences = character.episode.length;
+        createCharacterCard(image, name, status, type, occurrences);
+      });
     }
   } catch (error) {
     console.error("Die Daten sind nicht erreichbar");

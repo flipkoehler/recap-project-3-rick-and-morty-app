@@ -1,4 +1,4 @@
-export function createCharacterCard(image, name, status) {
+export function createCharacterCard(image, name, status, type, occurrences) {
   const main = document.querySelector('[data-js="main"]');
   const card = document.createElement("ul");
   card.classList.add("card-container");
@@ -17,17 +17,11 @@ export function createCharacterCard(image, name, status) {
         <dt class="card__info-title">Status</dt>
         <dd class="card__info-description">${status}</dd>
         <dt class="card__info-title">Type</dt>
-        <dd class="card__info-description">${status}</dd>
+        <dd class="card__info-description">${type}</dd>
         <dt class="card__info-title">Occurrences</dt>
-        <dd class="card__info-description">${status}</dd>
+        <dd class="card__info-description">${occurrences}</dd>
       </dl>
     </div>
   </li>`;
   main.append(card);
 }
-
-createCharacterCard(
-  "https://rickandmortyapi.com/api/character/avatar/447.jpeg",
-  "Judith",
-  "Dead"
-);
